@@ -1,17 +1,15 @@
 import React from "react";
 import { Text, View, Image } from "react-native";
+import { getImageForStatusMessages } from "./../helper/helperFunctions";
 
-const Error = ({ text, textStyle }) => (
+const StatusMessage = ({ value, textStyle, text }) => (
   <View style={styles.container}>
-    <Image
-      source={require("./../assets/images/error.png")}
-      style={styles.image}
-    />
+    <Image source={getImageForStatusMessages(value)} style={styles.image} />
     <Text style={textStyle}>{text}</Text>
   </View>
 );
 
-export default Error;
+export default StatusMessage;
 
 const styles = {
   container: {
@@ -21,7 +19,7 @@ const styles = {
     textAlign: "justify",
   },
   image: {
-    width: 201,
+    width: 200,
     height: 200,
   },
 };

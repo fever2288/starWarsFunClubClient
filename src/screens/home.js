@@ -3,7 +3,8 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import * as Font from "expo-font";
 import Logo from "./../assets/images/logo.png";
 import Button from "./../common/button";
-import Error from "./../common/error";
+import StatusMessage from "./../common/statusMessage";
+import { Messages } from "./../helper/constants";
 
 export default class Home extends Component {
   constructor() {
@@ -37,7 +38,7 @@ export default class Home extends Component {
               <Text style={styles.text}>Welcome to star wars fun club</Text>
               <Text style={styles.text}>May the force be with you</Text>
               <Button
-                text="Submit"
+                text="Enter"
                 containerStyle={styles.button}
                 textStyle={styles.buttonTextStyle}
                 onPress={this.navigateToMovies}
@@ -47,7 +48,8 @@ export default class Home extends Component {
         )}
 
         {!fontLoaded && (
-          <Error
+          <StatusMessage
+            value={Messages.ERROR}
             text="We are having problem connecting to mothership. Please try again later"
             textStyle={styles.text}
           />
@@ -61,7 +63,6 @@ const styles = {
   container: {
     flex: 1,
     backgroundColor: "white",
-
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
@@ -72,7 +73,6 @@ const styles = {
     height: null,
     resizeMode: "contain",
   },
-
   button: {
     height: 60,
     width: 150,
