@@ -5,6 +5,7 @@ import Loader from "./../common/loader";
 import StatusMessage from "./../common/statusMessage";
 import { Messages } from "./../helper/constants";
 import Character from "./../common/character";
+import Button from "./../common/button";
 
 const axios = require("axios");
 
@@ -31,7 +32,9 @@ export default class Characters extends Component {
       await axios
         .get(path)
         .then((response) => {
-          this.setState({ characters: response.data.body });
+          this.setState({ characters: response.data.body }, () =>
+            this.sort(Messages.MAX)
+          );
           this.setState({ loading: false });
         })
         .catch((error) => {
@@ -42,6 +45,22 @@ export default class Characters extends Component {
       this.setState({ error: true });
       this.setState({ loading: false });
     }
+  };
+
+  sort = (criteria) => {
+    this.setState({ loading: true });
+    const { characters } = this.state;
+    this.setState({ sort: criteria });
+    let sorted = [];
+    switch (criteria) {
+      case Messages.MIN:
+        sorted = characters.sort((a, b) => Number(a.height) - Number(b.height));
+        break;
+      case Messages.MAX:
+        sorted = characters.sort((b, a) => Number(a.height) - Number(b.height));
+    }
+    this.setState({ characters: sorted });
+    this.setState({ loading: false });
   };
 
   renderCharacters = () => {
@@ -61,12 +80,30 @@ export default class Characters extends Component {
   };
 
   render() {
-    const { loading, error, title } = this.state;
+    const { loading, error, title, sort } = this.state;
     return (
       <View style={styles.container}>
         {!loading && (
           <View style={styles.scroll}>
             <Text style={styles.title}>{title}</Text>
+            <View style={styles.sortContainer}>
+              <Button
+                text="Height Ascending"
+                containerStyle={styles.button}
+                textStyle={styles.buttonText}
+                onPress={() => this.sort(Messages.MIN)}
+                disabled={sort === Messages.MIN}
+                disabledStyle={styles.buttonDisabled}
+              />
+              <Button
+                text="Height Descending"
+                containerStyle={styles.button}
+                textStyle={styles.buttonText}
+                onPress={() => this.sort(Messages.MAX)}
+                disabled={sort === Messages.MAX}
+                disabledStyle={styles.buttonDisabled}
+              />
+            </View>
             <ScrollView showsVerticalScrollIndicator={false}>
               {this.renderCharacters()}
             </ScrollView>
@@ -110,6 +147,30 @@ const styles = {
     marginBottom: 10,
   },
   scroll: {
-    marginBottom: 30,
+    marginBottom: 90,
+  },
+  button: {
+    height: 55,
+    width: 120,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+    borderColor: "black",
+    borderWidth: 1,
+  },
+  buttonDisabled: {
+    opacity: 0.4,
+  },
+  buttonText: {
+    color: "black",
+    fontSize: 14,
+    fontFamily: "Starjedi",
+    textAlign: "center",
+  },
+  sortContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginBottom: 10,
   },
 };
