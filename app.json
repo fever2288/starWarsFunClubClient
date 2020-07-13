@@ -1,0 +1,12 @@
+{
+  "name": "starWarsFanClubApp",
+  "displayName": "starWarsFanClubApp",
+  "expo": {
+    "name": "starWarsFanClubApp",
+    "slug": "starWarsFanClubApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
