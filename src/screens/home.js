@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, Image } from "react-native";
 import * as Font from "expo-font";
 import Logo from "./../assets/images/logo.png";
 import Button from "./../common/button";
@@ -25,8 +25,9 @@ export default class Home extends Component {
     const { navigation } = this.props;
     navigation.navigate("Movies");
   };
+
   render() {
-    let { fontLoaded } = this.state;
+    const { fontLoaded } = this.state;
     return (
       <View style={styles.container}>
         {fontLoaded && (
@@ -42,6 +43,7 @@ export default class Home extends Component {
                 containerStyle={styles.button}
                 textStyle={styles.buttonTextStyle}
                 onPress={this.navigateToMovies}
+                disabled={false}
               />
             </View>
           </View>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Animated, Easing, Text } from "react-native";
+import { View, Animated, Text } from "react-native";
 import Logo from "./../assets/images/yoda.png";
 
 class Loader extends Component {
@@ -58,7 +58,7 @@ const styles = {
   },
   text: {
     fontSize: 14,
-
+    fontFamily: "Starjedi",
     marginTop: 20,
   },
 };
