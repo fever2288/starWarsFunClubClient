@@ -1,10 +1,12 @@
 
 import React from 'react';
-import {Text} from 'react-native';
+import AppNavigator from './src/navigation/appNavigator';
 
-
-export default function App() {
-  return (
-    <Text>Welcome to star wars app</Text>
-  )
+export default class App extends React.Component {
+  render() {
+    return (
+      <AppNavigator/>
+    );
+  }
 }
+
