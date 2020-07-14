@@ -137,7 +137,8 @@ const styles = {
   text: {
     color: "#000000",
     textAlign: "center",
-    fontFamily: "Starjedi",
+    fontWeight:'bold',
+    fontSize:18
   },
   container: {
     flex: 1,
@@ -161,7 +162,6 @@ const styles = {
     borderRadius: 6,
   },
   buttonTextStyle: {
-    fontFamily: "Starjedi",
     color: "#ffffff",
     fontSize: 24,
   },
@@ -171,7 +171,6 @@ const styles = {
     borderColor: "black",
     borderWidth: 3,
     paddingLeft: 10,
-    fontFamily: "Starjedi",
   },
   disabledButton: {
     opacity: 0.4,

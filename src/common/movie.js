@@ -28,6 +28,7 @@ const styles = {
     flexDirection: "column",
   },
   titleText: {
-    fontFamily: "Starjedi",
+    fontWeight:'bold',
+    fontSize:18
   },
 };

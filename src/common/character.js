@@ -41,7 +41,6 @@ const styles = {
     backgroundColor: "black",
   },
   name: {
-    fontFamily: "Starjedi",
     color: "white",
     fontSize: 16,
   },

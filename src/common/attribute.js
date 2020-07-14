@@ -19,11 +19,10 @@ const styles = {
     padding: 5,
   },
   attribute: {
-    fontFamily: "Starjedi",
     fontSize: 13,
+    fontWeight:'bold'
   },
   value: {
-    fontFamily: "Starjedi",
     color: "#0e9933",
     fontSize: 10,
   },

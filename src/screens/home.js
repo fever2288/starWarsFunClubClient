@@ -3,22 +3,15 @@ import { Text, View, Image } from "react-native";
 import * as Font from "expo-font";
 import Logo from "./../assets/images/logo.png";
 import Button from "./../common/button";
-import StatusMessage from "./../common/statusMessage";
-import { Messages } from "./../helper/constants";
 
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      fontLoaded: false,
     };
   }
 
-  async componentDidMount() {
-    await Font.loadAsync({
-      Starjedi: require("./../assets/fonts/Starjedi.ttf"),
-    });
-    this.setState({ fontLoaded: true });
+  componentDidMount() {
   }
 
   navigateToMovies = () => {
@@ -27,10 +20,8 @@ export default class Home extends Component {
   };
 
   render() {
-    const { fontLoaded } = this.state;
     return (
       <View style={styles.container}>
-        {fontLoaded && (
           <View>
             <View style={styles.logoHeight}>
               <Image source={Logo} style={styles.logo} />
@@ -47,15 +38,7 @@ export default class Home extends Component {
               />
             </View>
           </View>
-        )}
 
-        {!fontLoaded && (
-          <StatusMessage
-            value={Messages.ERROR}
-            text="We are having problem connecting to mothership. Please try again later"
-            textStyle={styles.text}
-          />
-        )}
       </View>
     );
   }
@@ -92,12 +75,12 @@ const styles = {
     justifyContent: "center",
   },
   text: {
-    fontFamily: "Starjedi",
     color: "#000000",
     textAlign: "center",
+    fontWeight:'bold',
+    fontSize:18
   },
   buttonTextStyle: {
-    fontFamily: "Starjedi",
     color: "#ffffff",
     fontSize: 24,
   },

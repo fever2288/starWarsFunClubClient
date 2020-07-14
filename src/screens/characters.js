@@ -128,7 +128,6 @@ const styles = {
   text: {
     color: "#000000",
     textAlign: "center",
-    fontFamily: "Starjedi",
   },
   container: {
     flex: 1,
@@ -143,8 +142,8 @@ const styles = {
   title: {
     fontSize: 18,
     textAlign: "center",
-    fontFamily: "Starjedi",
     marginBottom: 10,
+    fontWeight:'bold'
   },
   scroll: {
     marginBottom: 90,
@@ -164,9 +163,9 @@ const styles = {
   },
   buttonText: {
     color: "black",
-    fontSize: 14,
-    fontFamily: "Starjedi",
+    fontSize: 16,
     textAlign: "center",
+    fontWeight:'bold'
   },
   sortContainer: {
     flexDirection: "row",

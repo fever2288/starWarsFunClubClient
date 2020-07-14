@@ -57,9 +57,9 @@ const styles = {
     padding: 10,
   },
   text: {
-    fontSize: 14,
-    fontFamily: "Starjedi",
     marginTop: 20,
+    fontWeight:'bold',
+    fontSize:18
   },
 };
 
