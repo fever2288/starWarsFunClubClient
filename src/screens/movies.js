@@ -4,7 +4,6 @@ import {
   TextInput,
   Keyboard,
   ScrollView,
-  Dimensions,
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
@@ -16,7 +15,6 @@ import Movie from "./../common/movie";
 import { LOCALHOST, PORT } from "./../../config";
 const axios = require("axios");
 import { avatarImageForTheMovie } from "./../helper/helperFunctions";
-const windowWidth = Dimensions.get("window").width;
 
 export default class Movies extends Component {
   constructor() {
@@ -84,6 +82,7 @@ export default class Movies extends Component {
     const { loading, error, empty, searchTerm, movies } = this.state;
     return (
       <View style={styles.container}>
+        <View style={styles.header}>
         <TextInput
           style={styles.inputStyle}
           placeholder="Search movies"
@@ -100,6 +99,7 @@ export default class Movies extends Component {
           disabled={!searchTerm}
           disabledStyle={styles.disabledButton}
         />
+        </View>
         {movies.length !== 0 && !loading && (
           <ScrollView showsVerticalScrollIndicator={false}>
             {this.renderMovies()}
@@ -143,14 +143,12 @@ const styles = {
   container: {
     flex: 1,
     backgroundColor: "white",
-    alignItems: "center",
     padding: 20,
   },
   innerContainer: {
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-    width: windowWidth - 50,
   },
   button: {
     height: 50,
@@ -176,6 +174,10 @@ const styles = {
     opacity: 0.4,
   },
   movies: {
-    width: windowWidth - 50,
+  
   },
+  header: {
+    justifyContent:'center',
+    alignItems:'center'
+  }
 };
