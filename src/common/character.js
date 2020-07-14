@@ -4,7 +4,7 @@ import Logo from "./../assets/images/logo.png";
 import Attribute from "./attribute";
 
 const Character = ({ height, gender, mass, birthYear, name }) => (
-  <View key={name} style={styles.container}>
+  <View style={styles.container}>
     <View style={styles.nameContainer}>
       <Text style={styles.name}>{name}</Text>
     </View>

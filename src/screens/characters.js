@@ -69,6 +69,7 @@ export default class Characters extends Component {
       const { height, gender, mass, birth_year, name } = character;
       return (
         <Character
+          key={name}
           height={height}
           gender={gender}
           mass={mass}

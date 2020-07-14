@@ -63,6 +63,7 @@ export default class Movies extends Component {
       const avatar = avatarImageForTheMovie(episode_id);
       return (
         <Movie
+          key = {episode_id}
           episode_id={episode_id}
           onPress={() => this.navigateToMovie(movie)}
           avatar={avatar}

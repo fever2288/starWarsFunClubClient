@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 const Movie = ({ episode_id, onPress, avatar, title }) => (
-  <View key={episode_id}>
+  <View>
     <TouchableOpacity onPress={onPress} style={styles.movieContainer}>
       <Image source={avatar} style={styles.imageStyle} />
       <View style={styles.titleStyle}>
