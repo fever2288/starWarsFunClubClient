@@ -3,6 +3,7 @@ import { Text, View, Image } from "react-native";
 import * as Font from "expo-font";
 import Logo from "./../assets/images/logo.png";
 import Button from "./../common/button";
+import {Language} from "./../language/language"
 
 export default class Home extends Component {
   constructor() {
@@ -27,8 +28,8 @@ export default class Home extends Component {
               <Image source={Logo} style={styles.logo} />
             </View>
             <View style={styles.content}>
-              <Text style={styles.text}>Welcome to star wars fun club</Text>
-              <Text style={styles.text}>May the force be with you</Text>
+              <Text style={styles.text}>{Language.welcome}</Text>
+              <Text style={styles.text}>{Language.force}</Text>
               <Button
                 text="Enter"
                 containerStyle={styles.button}

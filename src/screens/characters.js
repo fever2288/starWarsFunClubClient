@@ -6,6 +6,7 @@ import StatusMessage from "./../common/statusMessage";
 import { Messages } from "./../helper/constants";
 import Character from "./../common/character";
 import Button from "./../common/button";
+import {Language} from "./../language/language"
 
 const axios = require("axios");
 
@@ -89,7 +90,7 @@ export default class Characters extends Component {
             <Text style={styles.title}>{title}</Text>
             <View style={styles.sortContainer}>
               <Button
-                text="Height Ascending"
+                text={Language.hightAsc}
                 containerStyle={styles.button}
                 textStyle={styles.buttonText}
                 onPress={() => this.sort(Messages.MIN)}
@@ -97,7 +98,7 @@ export default class Characters extends Component {
                 disabledStyle={styles.buttonDisabled}
               />
               <Button
-                text="Height Descending"
+                text={Language.hightDesc}
                 containerStyle={styles.button}
                 textStyle={styles.buttonText}
                 onPress={() => this.sort(Messages.MAX)}
@@ -114,7 +115,7 @@ export default class Characters extends Component {
           {error && (
             <StatusMessage
               value={Messages.ERROR}
-              text="We are having problem connecting to mothership. Please try again later"
+              text={Language.errorMessage}
               textStyle={styles.text}
             />
           )}

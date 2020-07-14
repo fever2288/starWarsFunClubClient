@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Animated, Text } from "react-native";
 import Logo from "./../assets/images/yoda.png";
+import {Language} from "./../language/language"
 
 class Loader extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Loader extends Component {
             source={Logo}
           />
         </View>
-        <Text style={styles.text}>The Force will be with you soon...</Text>
+          <Text style={styles.text}>{Language.loaderText}</Text>
       </View>
     );
   }

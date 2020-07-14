@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, Image } from "react-native";
 import Logo from "./../assets/images/logo.png";
 import Attribute from "./attribute";
+import {Language} from "./../language/language"
 
 const Character = ({ height, gender, mass, birthYear, name }) => (
   <View style={styles.container}>
@@ -15,13 +16,13 @@ const Character = ({ height, gender, mass, birthYear, name }) => (
       </View>
 
       <View style={styles.attributesContainer}>
-        <Attribute attributeName="gender" value={gender} />
-        <Attribute attributeName="birthYear" value={birthYear} />
+        <Attribute attributeName={Language.gender} value={gender} />
+        <Attribute attributeName={Language.birthYear} value={birthYear} />
       </View>
 
       <View style={styles.attributesContainer}>
-        <Attribute attributeName="height" value={height} />
-        <Attribute attributeName="weight" value={mass} />
+        <Attribute attributeName={Language.height} value={height} />
+        <Attribute attributeName={Language.weight} value={mass} />
       </View>
     </View>
   </View>

@@ -15,6 +15,8 @@ import Movie from "./../common/movie";
 import { LOCALHOST, PORT } from "./../../config";
 const axios = require("axios");
 import { avatarImageForTheMovie } from "./../helper/helperFunctions";
+import {Language} from "./../language/language"
+
 
 export default class Movies extends Component {
   constructor() {
@@ -87,14 +89,14 @@ export default class Movies extends Component {
         <View style={styles.header}>
         <TextInput
           style={styles.inputStyle}
-          placeholder="Search movies"
+          placeholder={Language.searchMovies}
           onChangeText={(searchTerm) => {
             this.setState({ searchTerm });
           }}
           value={searchTerm}
         />
         <Button
-          text="Search"
+          text={Language.search}
           containerStyle={styles.button}
           textStyle={styles.buttonTextStyle}
           onPress={() => this.search()}
@@ -116,14 +118,14 @@ export default class Movies extends Component {
             {empty && (
               <StatusMessage
                 value={Messages.EMPTY}
-                text="ooops! Seems like your search returned zero results.Try again"
+                text={Language.emptyMessage}
                 textStyle={styles.text}
               />
             )}
             {error && (
               <StatusMessage
                 value={Messages.ERROR}
-                text="We are having problem connecting to mothership. Please try again later"
+                text={Language.errorMessage}
                 textStyle={styles.text}
               />
             )}
