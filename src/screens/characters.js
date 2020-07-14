@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView, SafeAreaView } from "react-native";
 import { LOCALHOST, PORT } from "./../../config";
 import Loader from "./../common/loader";
 import StatusMessage from "./../common/statusMessage";
@@ -84,7 +84,7 @@ export default class Characters extends Component {
   render() {
     const { loading, error, title, sort } = this.state;
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         {!loading && !error && (
           <View style={styles.scroll}>
             <Text style={styles.title}>{title}</Text>
@@ -121,7 +121,7 @@ export default class Characters extends Component {
           )}
           {loading && <Loader />}
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }

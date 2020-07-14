@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, SafeAreaView  } from "react-native";
 import * as Font from "expo-font";
 import Logo from "./../assets/images/logo.png";
 import Button from "./../common/button";
@@ -22,7 +22,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
           <View>
             <View style={styles.logoHeight}>
               <Image source={Logo} style={styles.logo} />
@@ -39,7 +39,7 @@ export default class Home extends Component {
               />
             </View>
           </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }

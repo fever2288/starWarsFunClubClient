@@ -6,6 +6,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  SafeAreaView
 } from "react-native";
 import Loader from "./../common/loader";
 import StatusMessage from "./../common/statusMessage";
@@ -86,7 +87,7 @@ export default class Movies extends Component {
   render() {
     const { loading, error, empty, searchTerm, movies } = this.state;
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.header}>
         <TextInput
           style={styles.inputStyle}
@@ -133,7 +134,7 @@ export default class Movies extends Component {
             {loading && <Loader />}
           </KeyboardAvoidingView>
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }
