@@ -39,6 +39,7 @@ export default class Movies extends Component {
         .then((response) => {
           this.setState({ movies: response.data.body });
           this.setState({ loading: false });
+          this.setState({ error: false });
           if (response.data.body.length === 0) {
             this.setState({ empty: true });
           } else {
