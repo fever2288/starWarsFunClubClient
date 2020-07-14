@@ -85,7 +85,7 @@ export default class Characters extends Component {
     const { loading, error, title, sort } = this.state;
     return (
       <View style={styles.container}>
-        {!loading && (
+        {!loading && !error && (
           <View style={styles.scroll}>
             <Text style={styles.title}>{title}</Text>
             <View style={styles.sortContainer}>
@@ -130,6 +130,7 @@ const styles = {
   text: {
     color: "#000000",
     textAlign: "center",
+    fontWeight:'bold'
   },
   container: {
     flex: 1,

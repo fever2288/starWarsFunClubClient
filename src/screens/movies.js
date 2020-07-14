@@ -33,6 +33,7 @@ export default class Movies extends Component {
   search = async () => {
     Keyboard.dismiss();
     this.setState({ loading: true });
+    this.setState({empty:false});
     const { searchTerm } = this.state;
     try {
       const path = `http://${LOCALHOST}:${PORT}/api/v1/starWars/movies?searchTerm=${searchTerm}`;
