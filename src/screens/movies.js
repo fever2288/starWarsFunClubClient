@@ -173,9 +173,6 @@ const styles = {
   disabledButton: {
     opacity: 0.4,
   },
-  movies: {
-  
-  },
   header: {
     justifyContent:'center',
     alignItems:'center'
